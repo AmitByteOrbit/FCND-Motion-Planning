@@ -1,5 +1,5 @@
 ## Project: 3D Motion Planning
-![Quad Image](./misc/enroute.png)
+![Quad Image](./misc/main.png)
 
 ---
 
@@ -96,6 +96,8 @@ Lastly I check if there is a clear point from the end node and actual goal, if t
       print("Adding end position")
       path.append(g_goal)
 ```
+Here is an image of the goal added to the last node.
+![Goal Image](./misc/goal.png)
 
 #### 5. Modify A* to include diagonal motion (or replace A* altogether)
 Minimal requirement here is to modify the code in planning_utils() to update the A* implementation to include diagonal motions on the grid that have a cost of sqrt(2), but more creative solutions are welcome. Explain the code you used to accomplish this step.
@@ -120,7 +122,8 @@ Initially I implemented the diagonals but later moved to A*. For the diagonals I
         valid_actions.remove(Action.SOUTH_EAST)
 
 ```
-
+Here is an image of the A-Star to the top of a building
+![A Star Image](./misc/a_star.png)
 
 #### 6. Cull waypoints 
 For this step you can use a collinearity test or ray tracing method like Bresenham. The idea is simply to prune your path of unnecessary waypoints. Explain the code you used to accomplish this step.
@@ -178,6 +181,8 @@ def add_altitude_gradient(path, start, goal,min_alt=5, max_alt=200):
     return path_with_alt
 ```
 
+Here is an image showing the reduced waypoints after culling
+![Pruning Image](./misc/pruning.png)
 
 ### Execute the flight
 #### 1. Does it work?
